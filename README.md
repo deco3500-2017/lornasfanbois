@@ -21,8 +21,8 @@ TeachHub aims to create a community in which teachers can communicate, share and
 ## Project Team
  | Member | Student Number | Course Code | Course | Roles |
 --- | --- | ---| --- | --- |
-Judah Bennett | | DECO3500 | Multimedia Design |  Moral support,Front end, Logistics
-Ihsaan Mahomed | | DECO3500 | Multimedia Design | Designer, UX/UI, Content
+Judah Bennett | s43955871 | DECO3500 | Multimedia Design |  Moral support,Front end, Logistics
+Ihsaan Mahomed | 44054191 | DECO3500 | Multimedia Design | Designer, UX/UI, Content
 Digby Tilse | 44351434 | DECO3500 | Multimedia Design | Designer, User Testing, Programmer
 
 
