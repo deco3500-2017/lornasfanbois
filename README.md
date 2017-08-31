@@ -7,26 +7,26 @@ The dilemma that is being addressed by this project is the issue of low retentio
 
 <br />
 
-The first factor this aims to mitigate is the large amount of additional planning work teachers are expected to do outside work hours. This is an issue that has been directly attributed to new teacher attrition. With the introduction of the national curriculum, many teachers are delivering similar lessons and content, and are expected to plan each lesson they delivers, without being given time within work hours to do so. TeachHub allows teachers to share lesson plans, content, and advice on effective teaching methods. This will help new teachers develop skills, and reduce the amount of additional work teachers much complete outside work hours. Additionally, it will help teachers find mentors, and develop a sense of community, which is another factor that impacts teacher retention.
+The first factor this aims to mitigate is the large amount of additional planning work teachers are expected to do outside work hours. This is an issue that has been directly attributed to new teacher attrition. With the introduction of the national curriculum, many teachers are delivering similar lessons and content, and are expected to plan each lesson they deliver, without being given time within work hours to do so. TeachHub allows teachers to share lesson plans, content, and advice on effective teaching methods. This will help new teachers develop skills, and reduce the amount of additional work teachers much complete outside work hours. Additionally, it will help teachers find mentors, and develop a sense of community, which is another factor that impacts teacher retention.
 
 <br/>
 
-Many new teachers who leave education identify a lack of support and mentorship as a heavy contributor to their choice. New teachers are not given adequate support and guidance in order to develop necessary skills to succeed. This issue stems in part from teachers not having spare time to take on additional roles as they are occupied with their own workload. Through TeachHub, new teachers will be able to connect with each other and more experience teachers, and develop a support network where they can seek guidance and mentorship, as well as reduce their considerable workload.
+Many new teachers who leave education identify a lack of support and mentorship as a heavy contributor to their choice. New teachers are not given adequate support and guidance in order to develop necessary skills to succeed. This issue stems in part from teachers not having spare time to take on additional roles as they are occupied with their own workload. Through TeachHub, new teachers will be able to connect with each other and more experienced teachers, and develop a support network where they can seek guidance and mentorship, as well as reduce their considerable workload.
 
 
 ## Concept
 
-TeachHub aims to create a community in which teachers can communicate, share and discover teaching methods and resources, new technologies and how to use them. The application will mainly focus on asynchronous distributed interaction where teachers will create, post, reply in forums. The web application will allow teachers to create and share lesson plans and use ready-made plans across a range of subjects. Lesson plans will have a rating system included which will allow teachers to see how effective the plan is and whether or not it will suit their circumstances. Teachers will also be able to get advice on teaching methods and how to deal with trouble students through a forum provided by the website.
+TeachHub aims to create a community in which teachers can communicate, share and discover teaching methods and resources, new technologies and how to use them. The application will mainly focus on asynchronous distributed interaction where teachers will create, post, reply in forums. The web application will allow teachers to create and share lesson plans and use ready-made plans across a range of subjects. Lesson plans will have a rating system included which will allow teachers to see how effective the plan is and whether or not it will suit their circumstances. Teachers will also be able to get advice on teaching methods and how to deal with troubled students through a forum provided by the website.
 
 ## Project Team
  | Member | Student Number | Course Code | Course | Roles |
 --- | --- | ---| --- | --- |
-Judah Bennett | s43955871 | DECO3500 | Multimedia Design |  Moral support,Front end, Logistics
+Judah Bennett | 43955871 | DECO3500 | Multimedia Design |  Moral support,Front end, Logistics
 Ihsaan Mahomed | 44054191 | DECO3500 | Multimedia Design | Designer, UX/UI, Content
 Digby Tilse | 44351434 | DECO3500 | Multimedia Design | Designer, User Testing, Programmer
 
 
-Group meetings: 12pm, Thursdays in Hawken Engineering Building (50)
+Group meetings: 12pm, Wednesdays in Hawken Engineering Building (50)
 
 <br />
 
