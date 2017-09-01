@@ -191,8 +191,6 @@ User testing refers to having users, or representative users (education students
 **Tags** : #collaborationAndSharing #social #asynchronousDistributed #CSCW #groupMultiuser #education #jobretention
 <br />
 
-Possible keywords associated with domain: sharing, collaboration
-
 ## Grades Breakdown
 
 * (5%) **Week 8** standup
