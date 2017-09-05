@@ -201,4 +201,22 @@ User testing refers to having users, or representative users (education students
 
 Total: 40% weighted
 
+## Core Concept MVP
+
+To provide a platform for teachers to create and share lesson plans which adhere to the Australian curriculum. <br />
+
+This would include being able to: <br />
+
+* Upload/download files
+* Commenting on uploaded files
+* Home page
+* About page
+* Rating system (Rating Files and posts)
+* Lesson plans page
+* Search function (to sift through)
+* Sort function (Alphabetical, Subject, Year level, Rating, etc.) 
+
+
+
+
 
