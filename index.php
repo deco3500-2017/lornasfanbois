@@ -8,6 +8,7 @@
 
     include_once "includes/header.inc";
     require_once "processingDocuments/dbConnect.inc";
+    include_once "processingDocuments/postFunctions.inc";
 
     echo "<title>TeachHub</title>
 
@@ -19,6 +20,15 @@
     <h1>TeachHub</h1>
     
     ";
+
+    echo "Here:";
+
+    echo "<br />Number of Users: ";
+    echo getNumberOfUsers($conn);
+    echo "<br /> Number of Schools: ";
+    echo getNumberOfScools($conn);
+    echo "<br /> Number of posts:";
+    echo getNumberOfPosts($conn);
 
 
 

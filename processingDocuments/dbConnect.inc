@@ -17,7 +17,6 @@
     try {
         $conn = new PDO("mysql:host=$host;dbname=$databaseName", $userName, $password);
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        echo "connected successfully";
 
     } catch (PDOException $exception) {
         echo "Something went wrong: " . $exception->getMessage() . "<br />";
