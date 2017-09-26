@@ -7,7 +7,7 @@
      */
 
     /*
-     * -- TABLE SCHEMA -- 
+     * -- TABLE SCHEMA --
      * Table Name: USER
      * USEREMAIL (PK) varchar(50)
      * USERPASSWORD varchar(40)
@@ -33,8 +33,48 @@
      *
      * $userEmail: the email address of the user to be set to admin.
      * */
-    function changeUserToAdmin($userEmail) {
-        $sql = "UPDATE USER SET USERTYPE = 'Admin' WHERE USEREMAIL = '$userEmail'";
+    function changeUserToAdmin($conn, $userEmail) {
+        $sql = "UPDATE USER SET USERTYPE = 'admin' WHERE USEREMAIL = '$userEmail'";
+        $conn - exec($sql);
+    }
 
+    /**
+     * Checks if the user has received 2/3 warnings. If so the user is banned, otherwise the user is given a warning.
+     * @param connection $conn connection object to the database
+     * @param string $userEmail the email address of the user getting the warning
+     */
+    function giveUserWarning($conn, $userEmail) {
+        // could return a boolean indicating if the user was banned
+        $userWarnings = getUserWarnings($conn, $userEmail);
+        if ($userWarnings == 2) {
+            banUser($conn, $userEmail);
+            return;
+        }
+
+        $userWarnings++;
+
+        $sql = "UPDATE USER SET USERWARNINGS = " . $userWarnings;
+    }
+
+    /*
+     * Returns the number of warnings a certain users has received
+     * @param connection $conn the connection object for the database
+     * @param string @userEmail the email address of the user to get the number of warnings for
+     * @return int the number of warnings @userEmail has received
+     * */
+    function getUserWarnings($conn, $userEmail) {
+        $sql = "SELECT USERWARNINGS FROM USER WHERE USEREMAIL = '$userEmail'";
+        $numberOfWarnings = 0;
+        foreach ($conn->query($sql) as $row) {
+            $numberOfWarnings = $row["USERWARNINGS"];
+        }
+
+        return $numberOfWarnings;
+
+    }
+
+    function banUser($conn, $userEmail) {
+        $sql = "UPDATE USER SET USERISBANNED = 1 WHERE USEREMAIL = '$userEmail'";
+        $conn->exec($sql);
     }
 
