@@ -23,8 +23,6 @@
 
     echo "Here:";
 
-    echo "<br />Number of Users: ";
-    echo getNumberOfUsers($conn);
     echo "<br /> Number of Schools: ";
     echo getNumberOfScools($conn);
     echo "<br /> Number of posts:";
