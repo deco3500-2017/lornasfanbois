@@ -21,6 +21,8 @@
      *
      * */
 
+    // could just include the connection doc and not have to pass conn to every single function..
+
     function addUser($conn, $userEmail, $userPassword, $userFirstName, $userLastName) {
 
         $sql = "
@@ -28,12 +30,18 @@
                 VALUES ('$userEmail', '$userPassword', '$userFirstName', '$userLastName')";
     }
 
-    /*
+    /**
      * Change a user's type to admin
-     *
-     * $userEmail: the email address of the user to be set to admin.
+     * @param $conn
      * */
-    function changeUserToAdmin($conn, $userEmail) {
+    function changeUserType($conn, $userEmail, $type) {
+        $userTypes = array("user", "admin");
+
+        if (!in_array($type, $userTypes)) {
+            echo "<script>console.log('" . $type;
+            echo"is not a valid user type')</script>";
+            return;
+        }
         $sql = "UPDATE USER SET USERTYPE = 'admin' WHERE USEREMAIL = '$userEmail'";
         $conn - exec($sql);
     }
@@ -56,7 +64,7 @@
         $sql = "UPDATE USER SET USERWARNINGS = " . $userWarnings;
     }
 
-    /*
+    /**
      * Returns the number of warnings a certain users has received
      * @param connection $conn the connection object for the database
      * @param string @userEmail the email address of the user to get the number of warnings for
@@ -73,8 +81,16 @@
 
     }
 
+    /**
+     * Ban the user specificied by $userEmail
+     *
+     */
     function banUser($conn, $userEmail) {
         $sql = "UPDATE USER SET USERISBANNED = 1 WHERE USEREMAIL = '$userEmail'";
         $conn->exec($sql);
+    }
+
+    function isBanned() {
+
     }
 
