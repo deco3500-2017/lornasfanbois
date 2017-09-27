@@ -15,18 +15,14 @@
 </head>";
 
     echo "<body>";
+    include_once "includes/mainNavigation.inc";
 
     echo "
     <h1>TeachHub</h1>
     
     ";
 
-    echo "Here:";
-
-    echo "<br /> Number of Schools: ";
-    echo getNumberOfScools($conn);
-    echo "<br /> Number of posts:";
-    echo getNumberOfPosts($conn);
+    echo "The test functions have been removed. ";
 
 
 

@@ -31,7 +31,7 @@
     }
 
     /**
-     * Change a user's type to admin
+     * Change a user's type $type. Valid user types are specified in $userTypes array.
      * @param $conn
      * */
     function changeUserType($conn, $userEmail, $type) {
@@ -54,7 +54,7 @@
     function giveUserWarning($conn, $userEmail) {
         // could return a boolean indicating if the user was banned
         $userWarnings = getUserWarnings($conn, $userEmail);
-        if ($userWarnings == 2) {
+        if ($userWarnings >= 2) {
             banUser($conn, $userEmail);
             return;
         }
@@ -83,14 +83,33 @@
 
     /**
      * Ban the user specificied by $userEmail
-     *
+     * @param $conn connection object to database
+     * @param $userEmail string the user to ban
      */
     function banUser($conn, $userEmail) {
         $sql = "UPDATE USER SET USERISBANNED = 1 WHERE USEREMAIL = '$userEmail'";
         $conn->exec($sql);
     }
 
-    function isBanned() {
+    /**
+     * Used to check if a user is banned
+     * @param $conn connection object to database
+     * @param $userEmail string email of the user you wish to check if they are banned
+     * @return bool true if the user is banned, false if the user is not banned.
+     */
+    function isBanned($conn, $userEmail) {
+        $userIsBanned = "";
+        $sql = "SELECT USERISBANNED FROM USER WHERE USEREMAIL = '$userEmail'";
+
+        // this is going to return a 1 or 0.
+        foreach ($conn->query($sql) as $row) {
+            $userIsBanned = $row["USERISBANNED"];
+        }
+        if ($userIsBanned == 1) {
+            return true;
+        }
+        return false;
+
 
     }
 
