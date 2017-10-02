@@ -29,4 +29,4 @@
 
 
 
-    echo "</body></html>";
+    include "includes/closingTags.inc";

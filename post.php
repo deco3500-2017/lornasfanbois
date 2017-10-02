@@ -13,10 +13,12 @@
 
     include_once "processingDocuments/dbConnect.inc";
     include "includes/header.inc";
+    include "processingDocuments/postFunctions.inc";
 
     // head
     echo "
     <title>Post</title>
+    <script src='js/postjs.js'></script>
     </head>";
 
     // body
@@ -28,24 +30,33 @@
 
     // post form
     echo "
+    <h1>Post</h1>
+    <div id='postFormContainerDiv' style='position: absolute;'>
+    
     <form action='processingDocuments/postHandler.php' method='post'>
-    <label for='title'>Title<span class='requiredField'>*</span></label> <input type='text' required id='title' name='title' />
+    
+    <label for='title'>Title<span class='requiredField'>*</span></label> <input type='text' required id='title' name='title' /> <br />
     <label for='topic'>Topic<span class='requiredField'>*</span> </label> <input type='text' id='topic' name='topic' /> <br/>
     <label for='summary'>Summary<span class='requiredField'>*</span> </label> <input type='text' id='summary' name='summary' /><br/>
     <label for='anonymous' title='I would like my post to be anonymous'>Anonymous</label> <input type='checkbox' id='anonymous' name='anonymous' title='I would like my post to be anonymous' /><br/>
     <label for='postBody'>Your post</label><br/>
     <textarea id='postBody' name='postBody'></textarea><br/>
     
-    <button title='Tag your post'>+</button>
+    <img src='images/tag.svg' title='Tag your post to help people find it' height='20px' />
     
-    
+    <br />
     <input type='submit' name='submit' />
     
 </form>
     
-    
+    </div>
     ";
 
 
     // closing tags
-    echo "</body></html>";
+
+    echo "
+    <script src='js/centreDiv.js'></script>
+    ";
+
+    include "includes/closingTags.inc";
