@@ -1,38 +1,120 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>TeachHub</title>
-</head>
-  <body>
-	<div class="menu">
-		<header>
-			<a class="menuitem" href="index.html">Home</a>
-			<a class="menuitem" href="about.html">About</a>
-			<form accept-charset="UTF-8" action="/deco3500-2017/lornasfanbois/search" class="js-site-search-form" data-scoped-search-url="/deco3500-2017/lornasfanbois/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
-			<label class="search-header">
-			  <input type="text" class="search-header-field" value="" placeholder="Search">
-			</label>
-			</form>
-		</header>
-		</div>
-	<div class="main">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<!-- Setting the width -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Portfolio</title>
+
+	<!-- Bootstrap CSS -->
+	<link href="css/bootstrap.css" rel="stylesheet">
+
+	<!-- CSS -->
+	<link href="css/main.css" rel="stylesheet">
 	
-		<div class="placeholder">
-		<!--image-->
-			<p>
-			placeholder
-			</p>
-		</div>
-		<div class="placeholder">
-		<!--image-->
-			<p>
-			placeholder
-			</p>
+	<!-- jquery -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+</head>
+
+<body>
+
+	<!-- Navbar -->
+	<div class="navbar navbar-inverse navbar-static-top">
+		<div class="container">
+			<!-- This div changes the menu to a drop-down for mobile users -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav navbar-left">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="lessonplans.html">Lesson Plans</a></li>
+					<li><a href="viewposts.php">View Posts</a></li>
+				</ul>
+				<form accept-charset="UTF-8" action="/deco3500-2017/lornasfanbois/search" class="js-site-search-form" data-scoped-search-url="/deco3500-2017/lornasfanbois/search" data-unscoped-search-url="/search" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" type="hidden" value="✓"></div>
+					<label class="search-header">
+						<input type="text" class="search-header-field" value="" placeholder="Search">
+					</label>
+				</form>
+			</div>
 		</div>
 	</div>
-	<footer>
+
+	<!-- Portfolio Images -->	
+	<div class="container pt">
+		<div class="row mt centered">	
+			<div class="container">
+				<p><b>Teach Hub</b> is an online space for teachers to get Australian Curriculum lesson plans.Teachers may also view our forums, where they can post and discuss moderated topics.</p>
+			</div>
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-6 col-md-4 col-md-offset-4">
+						<h1 class="text-center login-title">Sign in to continue to TeachHub</h1>
+						<div class="account-wall">
+							<form class="form-signin">
+								<input type="text" class="form-control" placeholder="Email" required autofocus>
+								<br>
+								<input type="password" class="form-control" placeholder="Password" required>
+								<br>
+								<button class="btn btn-lg btn-primary btn-block" type="submit">
+									Sign in</button>
+								<label class="checkbox pull-left">
+									<input type="checkbox" value="remember-me">
+									Remember me
+								</label>
+								<a href="#" class="pull-right need-help">Need help? </a><span class="clearfix"></span>
+							</form>
+						</div>
+						<a href="#" class="text-center new-account">Create an account </a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	
-	</footer>
-  </body>
+	<!--Footer-->
+
+	<div id="footer">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4">
+					<h4> The University Of <br/>Queensland</h4>
+					<p>
+						Ihsaan Mahomed<br/>
+						Digby Tilse <br/>
+						Judah Bennett
+					</p>
+				</div>
+
+				<div class="col-lg-4">
+					<h4>Find Us On</h4>
+					<p>
+						<a href="#" target="_blank">Blogger</a><br/>
+						<a href="#" target="_blank">Facebook</a><br/>
+						<a href="#" target="_blank">Linkedin</a><br/>
+					</p>
+				</div>		
+
+				<div class="col-lg-4">
+					<h4>Contact Us</h4>
+					<p>
+						E-mail: support@teachhub.com.au<br/>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- Bootstrap JavaScript-->
+	<script src="js/bootstrap.min.js"></script>
+</body>
 </html>
