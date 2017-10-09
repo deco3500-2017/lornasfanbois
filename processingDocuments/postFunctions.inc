@@ -164,7 +164,7 @@
      * @param $postId the id of the post being liked
      */
     function likePost($conn, $userEmail, $postId) {
-        $sql = "INSERT INTO UPVOTE VALUES('$userEmail', $postId)";
+        $sql = "INSERT INTO POSTLIKE VALUES($postId, '$userEmail')";
 
         $conn->exec($sql);
     }
@@ -182,6 +182,16 @@ WHERE POSTID = $postId AND
 USEREMAIL = '$userEmail'";
 
         $conn->exec($sql);
+    }
+
+    function getNumberOfLikedPosts($conn, $userEmail) {
+        $sql = "SELECT COUNT(*) AS 'count' FROM POSTLIKE WHERE USEREMAIL = '$userEmail'";
+        $count = 0;
+        foreach($conn->query($sql) as $row) {
+            $count = $row["count"];
+        }
+
+        return $count;
     }
 
     /**
