@@ -169,15 +169,21 @@
         $conn->exec($sql);
     }
 
-
-    function removeLike($conn, $postId, $tag) {
+    /**
+     * Remove a like from a post
+     *
+     * @param $conn connection to the object
+     * @param $postId the id of the post to have the like removed from
+     * @param $userEmail the user 
+     */
+    function removeLike($conn, $postId, $userEmail) {
         $sql = "DELETE FROM POSTLIKE
 WHERE POSTID = $postId AND 
-POSTTAG = '$tag'";
+USEREMAIL = '$userEmail'";
 
         $conn->exec($sql);
     }
-    
+
     /**
      * Associate a tag with a post
      *
@@ -188,10 +194,9 @@ POSTTAG = '$tag'";
     function tagPost($conn, $postId, $postTag) {
         // as post is associated with a user through the post table
 
-        $sql = "INSERT INTO POSTTAG VALUES ($postId, $postTag)";
+        $sql = "INSERT INTO POSTTAG VALUES ($postId, '$postTag')";
         $conn->exec($sql);
     }
-
 
 
     function removeTag($conn, $postId, $tag) {
@@ -226,6 +231,37 @@ POSTTAG = '$tag'";
         }
 
         return $tags;
+    }
+
+    /**
+     * Gets all posts associated with a tag and returns them as a 2D array
+     *
+     */
+    function getPostsWithTag($conn, $tag) {
+        $sql = "SELECT * FROM POST WHERE POSTID IN (SELECT POSTID FROM POSTTAG WHERE POSTTAG = '$tag')";
+        $posts = array();
+        $arrayIndex = 0;
+        $fields = array("USEREMAIL", "POSTTITLE", "POSTTOPIC", "POSTSUMMARY", "POSTPOSTED", "POSTTEXT");
+
+        foreach ($conn->query($sql) as $row) {
+            $tags[$arrayIndex] = $row["POSTTAG"];
+            $arrayIndex++;
+            $post = array_map();
+
+            if ($row["POSTISANONYMOUS"] == 1) {
+                $row["USEREMAIL"] = "Anonymous";
+            }
+
+            for ($i = 0; $i < count($fields); $i++) {
+                $post[$fields[$i]] = $row[$fields[$i]];
+            }
+            $posts[$arrayIndex] = $post;
+            $arrayIndex++;
+
+        }
+
+        return $posts;
+
     }
 
 
