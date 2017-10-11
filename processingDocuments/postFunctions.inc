@@ -13,8 +13,6 @@
 // $TABLES = ["USER", "SCHOOL", "POST"];
 
     /*
-     *
-     *
      * -- POST --
      * POSTID (PK) AI
      * USEREMAIL (FK) varchar(50)
@@ -174,7 +172,7 @@
      *
      * @param $conn connection to the object
      * @param $postId the id of the post to have the like removed from
-     * @param $userEmail the user 
+     * @param $userEmail the user
      */
     function removeLike($conn, $postId, $userEmail) {
         $sql = "DELETE FROM POSTLIKE
@@ -187,7 +185,7 @@ USEREMAIL = '$userEmail'";
     function getNumberOfLikedPosts($conn, $userEmail) {
         $sql = "SELECT COUNT(*) AS 'count' FROM POSTLIKE WHERE USEREMAIL = '$userEmail'";
         $count = 0;
-        foreach($conn->query($sql) as $row) {
+        foreach ($conn->query($sql) as $row) {
             $count = $row["count"];
         }
 
@@ -273,6 +271,66 @@ POSTTAG = '$tag'";
         return $posts;
 
     }
+
+    function addComment($conn, $postID, $userEmail, $commentText) {
+        $sql = "INSERT INTO COMMENT (POSTID, USEREMAIL, COMMENTVOTES, COMMENTTEXT) 
+VALUES ($postID, '$userEmail', $commentText)";
+
+        $conn->exec($sql);
+    }
+
+    function removeComment($conn, $commentID) {
+        $sql = "DELETE FROM COMMENT WHERE COMMENTID = $commentID";
+        $conn->exec($sql);
+    }
+
+    /**
+     * Return all comments associated with a post as a 2D array
+     *
+     * @param $conn connection to the database
+     * @param @postID the id of the post to get comments for
+     * @return array a 2D array containing all comments for $postID
+     */
+    function getCommentsForPost($conn, $postID) {
+        $sql = "SELECT * FROM COMMENT WHERE POSTID = $postID";
+        $fields = array("COMMENTID", "USEREMAIL", "COMMENTPOSTED", "COMMENTVOTES", "COMMENTTEXT");
+        $comments = array();
+        $index = 0;
+
+        foreach ($conn->query($sql) as $row) {
+            $comment = array();
+            for ($i = 0; $i < count($fields); $i++) {
+                $comment[$i] = $row[$fields[$i]];
+            }
+            $comments[$index] = $comment;
+            $index++;
+        }
+
+        return $comments;
+
+    }
+
+    /**
+     * Prints all comments assocaited with a post in divs
+     *
+     * @param $conn connection to the database
+     * @param $postID the id of the post to print comments for
+     */
+    function printCommentsForPost($conn, $postID) {
+        echo "<p>returned from post $postID:</p>";
+
+        $posts = getCommentsForPost($conn, $postID);
+        foreach ($posts as $post) {
+            echo "<div>";
+            $index = 0;
+            foreach ($post as $field) {
+                echo "$index: $field";
+            }
+            echo "</div>";
+        }
+    }
+
+
 
 
 
