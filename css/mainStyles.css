@@ -46,5 +46,13 @@ nav li a:active {
     color: #ff0000;
 }
 
+.tag {
+    background-color: #bee1ff;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 2px;
+}
+
 
 

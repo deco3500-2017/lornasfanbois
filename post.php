@@ -42,7 +42,9 @@
     <label for='postBody'>Your post</label><br/>
     <textarea id='postBody' name='postBody'></textarea><br/>
     
-    <img src='images/tag.svg' title='Tag your post to help people find it' height='20px' />
+    <img id='addTag' src='images/tag.svg' title='Tag your post to help people find it'  height='20px' />
+    
+    
     
     <br />
     <input type='submit' name='submit' />

@@ -21,7 +21,7 @@
 
     echo "<p>The post has been tagged successfully</p>";
 
-    echo "<p>Getting posts with tag Cooking: </p>";
+    echo "<p>Getting posts with tag Study: </p>";
 
     foreach (getPostsWithTag($conn, "Study") as $arr) {
         print_r($arr);
@@ -43,8 +43,16 @@
 
     removeLike($conn, 2, "someone");
 
-    echo "The number of posts liked by someone is: " . getNumberOfLikedPosts($conn, "someone");
+    echo "The number of posts liked by user someone is: " . getNumberOfLikedPosts($conn, "someone");
     echo "<br />";
+
+    echo "<p>Printing comments post 1: </p>";
+
+    printCommentsForPost($conn, 1);
+
+    echo "<p>Printing comments for post 19: </p>";
+
+    printCommentsForPost($conn, 19);
 
     echo "<p>All actions successful</p>";
 

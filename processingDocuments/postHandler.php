@@ -38,3 +38,15 @@ echo "So far so good... trying to write...";
 
 savePost($conn, "someone", $postTitle, $postTopic, $postSummary, $postText, $postIsAnonymous);
 
+$tags = $_POST["tags"];
+$lastRecordId = $conn->lastInsertId();
+echo "Last record: " + $lastRecordId;
+
+if (!empty($tags)) {
+
+    foreach ($tags as $tag) {
+        tagPost($conn, $lastRecordId, $tag);
+    }
+}
+
+echo "Writing was successful! ";
