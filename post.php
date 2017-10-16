@@ -1,35 +1,35 @@
 <?php
-    /**
-     * Created by PhpStorm.
-     * User: Digby
-     * Date: 26/09/2017
-     * Time: 12:27 PM
-     */
+/**
+ * Created by PhpStorm.
+ * User: Digby
+ * Date: 26/09/2017
+ * Time: 12:27 PM
+ */
 
-    /**
-     * The actual form that the person posting is going to see
-     */
+/**
+ * The actual form that the person posting is going to see
+ */
 
 
-    include_once "processingDocuments/dbConnect.inc";
-    include "includes/header.inc";
-    include "processingDocuments/postFunctions.inc";
+include_once "processingDocuments/dbConnect.inc";
+include "includes/header.inc";
+include "processingDocuments/postFunctions.inc";
 
-    // head
-    echo "
+// head
+echo "
     <title>Post</title>
     <script src='js/postjs.js'></script>
     </head>";
 
-    // body
-    echo "
+// body
+echo "
     <body>
     ";
 
-    include "includes/mainNavigation.inc";
+include "includes/mainNavigation.inc";
 
-    // post form
-    echo "
+// post form
+echo "
     <h1>Post</h1>
     <div id='postFormContainerDiv' style='position: absolute;'>
     
@@ -55,10 +55,10 @@
     ";
 
 
-    // closing tags
+// closing tags
 
-    echo "
+echo "
     <script src='js/centreDiv.js'></script>
     ";
 
-    include "includes/closingTags.inc";
+include "includes/closingTags.inc";
