@@ -6,44 +6,5 @@
      * Time: 4:09 PM
      */
 
-    echo '
-    
-	<!--Footer-->
-
-	<div id="footer">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-4">
-					<h4> The University Of <br/>Queensland</h4>
-					<p>
-Ihsaan Mahomed<br/>
-						Digby Tilse <br/>
-						Judah Bennett
-</p>
-				</div>
-
-				<div class="col-lg-4">
-					<h4>Find Us On</h4>
-					<p>
-						<a href="#" target="_blank">Twitter</a><br/>
-						<a href="#" target="_blank">Facebook</a><br/>
-						<a href="#" target="_blank">Linkedin</a><br/>
-					</p>
-				</div>		
-
-				<div class="col-lg-4">
-					<h4>Contact Us</h4>
-					<p>
-E-mail: support@teachhub.com.au<br/>
-					</p>
-				</div>
-			</div>
-		</div>
-	</div>
-
-
-	<!-- Bootstrap JavaScript-->
-	<script src="js/bootstrap.min.js"></script>
-		
-</body>
-</html>';
+    echo "</body>";
+    echo "</html>";

@@ -10,8 +10,9 @@
  * The actual form that the person posting is going to see
  */
 
-include "includes/header.inc";
+
 include_once "processingDocuments/dbConnect.inc";
+include "includes/header.inc";
 include "processingDocuments/postFunctions.inc";
 
 // head
