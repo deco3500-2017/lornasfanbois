@@ -103,13 +103,13 @@
     * POSTISANONYMOUS bool*/
 
     function printAllPosts($conn) {
-        echo "Function Called";
+        //echo "Function Called";
         $sql = "SELECT * FROM  POST";
 
         foreach ($conn->query($sql) as $row) {
-            print_r($row);
+            //print_r($row);
 
-            echo "<div class='post'>";
+            //echo "<div class='post'>";
             if ($row["POSTISANONYMOUS"] == 1) {
                 $row["USEREMAIL"] = "Anonymous";
             }
