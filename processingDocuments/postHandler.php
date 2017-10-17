@@ -50,3 +50,4 @@ if (!empty($tags)) {
 }
 
 echo "Writing was successful! ";
+echo'<a href="../post.php">Return</a>';
