@@ -1,20 +1,15 @@
-<? php
-/**
- * Created by PhpStorm.
- * User: Digby
- * Date: 2/10/2017
- * Time: 3:14 PM
- */
-
-include_once "processingDocuments/dbConnect.inc";
-include_once "processingDocuments/postFunctions.inc";
-include "includes/header.inc";
-
-
-
-include "includes/closingTags.inc";
-echo'
-	<meta charset="utf-8">
+<?php
+    /**
+     * Created by PhpStorm.
+     * User: Digby
+     * Date: 2/10/2017
+     * Time: 3:14 PM
+     */
+    include_once "processingDocuments/dbConnect.inc";
+    include_once "processingDocuments/postFunctions.inc";
+    include "includes/header.inc";
+    echo "<title>View Posts</title>";
+    echo '	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<!-- Setting the width -->
@@ -30,10 +25,8 @@ echo'
 	
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-</head>
-
-<body>
-
+</head>';
+    echo '<body>
 	<!-- Navbar -->
 	<div class="navbar navbar-inverse navbar-static-top">
 		<div class="container">
@@ -60,13 +53,12 @@ echo'
 			</div>
 		</div>
 	</div>
-	
-	<h2>Approved Posts:</h2>;
-    printAllApprovedPosts($conn)
-    <h2>All posts</h2>";
-    printAllPosts($conn)
-    
-	
+	';
+    echo "<h2>Approved Posts:</h2>";
+    printAllApprovedPosts($conn);
+    echo "<h2>All posts</h2>";
+    printAllPosts($conn);
+	echo'
 	<!--Footer-->
 
 	<div id="footer">
@@ -103,4 +95,7 @@ E-mail: support@teachhub.com.au<br/>
 
 	<!-- Bootstrap JavaScript-->
 	<script src="js/bootstrap.min.js"></script>
-</body>
+';
+    include "includes/closingTags.inc";
+
+	
