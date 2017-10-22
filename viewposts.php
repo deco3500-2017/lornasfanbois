@@ -22,9 +22,7 @@
 
 	<!-- CSS -->
 	<link href="css/main.css" rel="stylesheet">
-	
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
 </head>';
     echo '<body>
 	<!-- Navbar -->
@@ -56,8 +54,6 @@
 	';
     echo "<h2>Approved Posts:</h2>";
     printAllApprovedPosts($conn);
-    echo "<h2>All posts</h2>";
-    printAllPosts($conn);
 	echo'
 	<!--Footer-->
 

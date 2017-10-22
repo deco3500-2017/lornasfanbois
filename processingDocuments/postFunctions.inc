@@ -103,13 +103,11 @@
     * POSTISANONYMOUS bool*/
 
     function printAllPosts($conn) {
-        //echo "Function Called";
         $sql = "SELECT * FROM  POST";
 
         foreach ($conn->query($sql) as $row) {
-            //print_r($row);
 
-            //echo "<div class='post'>";
+            echo "<div class='post'>";
             if ($row["POSTISANONYMOUS"] == 1) {
                 $row["USEREMAIL"] = "Anonymous";
             }
@@ -133,12 +131,15 @@
     function printAllApprovedPosts($conn) {
         $sql = "SELECT * FROM  POST WHERE USERAPPROVED IS NOT NULL";
 
+
         foreach ($conn->query($sql) as $row) {
+            echo "ID: " . $row["POSTID"];
+
             echo "<div class='post'>";
             if ($row["POSTISANONYMOUS"] == 1) {
                 $row["USEREMAIL"] = "Anonymous";
             }
-            echo "<h2>" . $row["POSTTITLE"] . "</h2>";
+            echo "<h2>" . $row["POSTID"] . " " . $row["POSTTITLE"] . "</h2>";
             echo "<p>Posted by <span class='bold'>" . $row["USEREMAIL"] . "</span></p>";
             echo "<p>Topic: ";
             echo $row["POSTTOPIC"];
@@ -149,6 +150,12 @@
             echo "</p>";
 
             echo "</div>";
+
+            if (getNumberOfComments($conn, $row["POSTID"]) > 0){
+                echo "<h3>Comments: </h3>";
+                printCommentsForPost($conn, $row["POSTID"]);
+            }
+
 
 
         }
@@ -326,8 +333,19 @@ VALUES ($postID, '$userEmail', $commentText)";
             foreach ($post as $field) {
                 echo "$index: $field";
             }
+            echo "<hr />";
             echo "</div>";
         }
+    }
+
+    function getNumberOfComments($conn, $postID) {
+        $sql = "SELECT COUNT(*) FROM COMMENT WHERE POSTID = $postID";
+        $number = 0;
+        foreach ($conn->query($sql) as $row) {
+            $number = $row["count"];
+        }
+
+        return $number;
     }
 
 

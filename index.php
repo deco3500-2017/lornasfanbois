@@ -18,8 +18,6 @@
 	<!-- CSS -->
 	<link href="css/main.css" rel="stylesheet">
 	
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
 
 <body>
