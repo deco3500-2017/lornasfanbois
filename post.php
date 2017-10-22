@@ -14,7 +14,7 @@
     include_once "processingDocuments/dbConnect.inc";
     include_once "processingDocuments/postFunctions.inc";
     include "includes/header.inc";
-    echo "<title>View Posts</title>";
+    echo "<title>Post</title>";
     echo '	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
@@ -28,9 +28,8 @@
 
 	<!-- CSS -->
 	<link href="css/main.css" rel="stylesheet">
+	<script src="js/postjs.js"></script>
 	
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>';
 // body
  echo '<body>
@@ -130,6 +129,7 @@ E-mail: support@teachhub.com.au<br/>
 
 	<!-- Bootstrap JavaScript-->
 	<script src="js/bootstrap.min.js"></script>
+	
 ';
     include "includes/closingTags.inc";
 

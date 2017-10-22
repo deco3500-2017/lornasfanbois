@@ -1,4 +1,4 @@
-<? php
+<?php
 /**
  * Created by PhpStorm.
  * User: Ihsaan
@@ -154,4 +154,4 @@ E-mail: support@teachhub.com.au<br/>
 
 	<!-- Bootstrap JavaScript-->
 	<script src="js/bootstrap.min.js"></script>
-</body>
+</body>';
