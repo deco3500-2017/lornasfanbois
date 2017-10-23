@@ -149,8 +149,8 @@
             echo "</p>";
 
             echo "</div>";
-
-
+		
+			printCommentsForPost($conn,$row["POSTID"]);
         }
     }
 

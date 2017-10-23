@@ -56,8 +56,7 @@
 	';
     echo "<h2>Approved Posts:</h2>";
     printAllApprovedPosts($conn);
-    echo "<h2>All posts</h2>";
-    printAllPosts($conn);
+
 	echo'
 	<!--Footer-->
 
