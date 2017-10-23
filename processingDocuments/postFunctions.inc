@@ -24,6 +24,24 @@
      *
      * */
 
+    const POSTID = "POSTID";
+    const USEREMAIL = "USEREMAIL";
+    const USERAPPROVED = "USERAPPROVED";
+    const POSTTITLE = "POSTTITLE";
+    const POSTTOPIC = "POSTTOPIC";
+    const COUNT = "count";
+    const POSTTEXT = "POSTTEXT";
+    const POSTISANONYMOUS = "POSTISANONYMOUS";
+    const POSTTAG = "POSTTAG";
+    const ANONYMOUS = "Anonymous";
+    const POSTSUMMARY = "POSTSUMMARY";
+    const POSTPOSTED = "POSTPOSTED";
+    const COMMENTID = "COMMENTID";
+    const COMMENTPOSTED = "COMMENTPOSTED";
+    const COMMENTVOTES = "COMMENTVOTES";
+    const COMMENTTEXT = "COMMENTTEXT";
+
+
     /*
      * Returns the total number of posts (count)
      *
@@ -32,7 +50,7 @@
         $result = 0;
         $sql = "SELECT COUNT(*) AS count FROM POST";
         foreach ($conn->query($sql) as $row) {
-            $result = $row['count'];
+            $result = $row[COUNT];
         }
         return $result;
     }
@@ -48,6 +66,7 @@
     function savePost($conn, $userEmail, $postTitle, $postTopic, $postSummary, $postText, $postIsAnonymous) {
         // required: USEREMAIL, POSTTITLE, POSTTOPIC, POSTTEXT
         // optional: POSTISANONYMOUS
+        // on is how HTML represents that a checkbox is checked
         if ($postIsAnonymous == "on") {
             $postIsAnonymous = 1;
         } else {
@@ -67,7 +86,7 @@
             foreach ($row as $field) {
                 $post[$field] = $row[$field];
             }
-        };
+        }
 
         return $post;
     }
@@ -108,17 +127,17 @@
         foreach ($conn->query($sql) as $row) {
 
             echo "<div class='post'>";
-            if ($row["POSTISANONYMOUS"] == 1) {
-                $row["USEREMAIL"] = "Anonymous";
+            if ($row[POSTISANONYMOUS] == 1) {
+                $row[USEREMAIL] = ANONYMOUS;
             }
-            echo "<h2>" . $row["POSTTITLE"] . "</h2>";
-            echo "<p>Posted by <span class='bold'>" . $row["USEREMAIL"] . "</span></p>";
+            echo "<h2>" . $row[POSTTITLE] . "</h2>";
+            echo "<p>Posted by <span class='bold'>" . $row[USEREMAIL] . "</span></p>";
             echo "<p>Topic: ";
-            echo $row["POSTTOPIC"];
+            echo $row[POSTTOPIC];
             echo "</p>";
 
             echo "<p>";
-            echo $row["POSTTEXT"];
+            echo $row[POSTTEXT];
             echo "</p>";
 
             echo "</div>";
@@ -134,26 +153,26 @@
 
         foreach ($conn->query($sql) as $row) {
             echo "<div class='post'>";
-            if ($row["POSTISANONYMOUS"] == 1) {
-                $row["USEREMAIL"] = "Anonymous";
+            if ($row[POSTISANONYMOUS] == 1) {
+                $row[USEREMAIL] = ANONYMOUS;
             }
-            echo "<h2>" . $row["POSTTITLE"] . "</h2>";
-            echo "<p>Posted by <span class='bold'>" . $row["USEREMAIL"] . "</span></p>";
+            echo "<h2>" . $row[POSTTITLE] . "</h2>";
+            echo "<p>Posted by <span class='bold'>" . $row[USEREMAIL] . "</span></p>";
             echo "<p>Topic: ";
-            echo $row["POSTTOPIC"];
+            echo $row[POSTTOPIC];
             echo "</p>";
 
             echo "<p>";
-            echo $row["POSTTEXT"];
+            echo $row[POSTTEXT];
             echo "</p>";
 
-            echo "This post has: " . getNumberOfComments($conn, $row["POSTID"]);
+            echo "This post has: " . getNumberOfComments($conn, $row[POSTID]);
             echo "</div>";
-            $numberOfComments = getNumberOfComments($conn, $row["POSTID"]);
+            $numberOfComments = getNumberOfComments($conn, $row[POSTID]);
             if ($numberOfComments > 0) {
                 echo "<h3 class='commentsHeading'>Comments ($numberOfComments): </h3>";
                 echo "<div class='comments'>";
-                printCommentsForPost($conn, $row["POSTID"]);
+                printCommentsForPost($conn, $row[POSTID]);
                 echo "</div>";
             }
 
@@ -190,10 +209,10 @@ USEREMAIL = '$userEmail'";
     }
 
     function getNumberOfLikedPosts($conn, $userEmail) {
-        $sql = "SELECT COUNT(*) AS 'count' FROM POSTLIKE WHERE USEREMAIL = '$userEmail'";
+        $sql = "SELECT COUNT(*) AS " . COUNT . " FROM POSTLIKE WHERE USEREMAIL = '$userEmail'";
         $count = 0;
         foreach ($conn->query($sql) as $row) {
-            $count = $row["count"];
+            $count = $row[COUNT];
         }
 
         return $count;
@@ -238,9 +257,9 @@ POSTTAG = '$tag'";
     WHERE POSTID = $postId
     ";
 
-        foreach ($conn->query($conn) as $row) {
+        foreach ($conn->query($sql) as $row) {
 
-            $tags[$arrayIndex] = $row["POSTTAG"];
+            $tags[$arrayIndex] = $row[POSTTAG];
 
             $arrayIndex++;
         }
@@ -256,15 +275,15 @@ POSTTAG = '$tag'";
         $sql = "SELECT * FROM POST WHERE POSTID IN (SELECT POSTID FROM POSTTAG WHERE POSTTAG = '$tag')";
         $posts = array();
         $arrayIndex = 0;
-        $fields = array("USEREMAIL", "POSTTITLE", "POSTTOPIC", "POSTSUMMARY", "POSTPOSTED", "POSTTEXT");
+        $fields = array(USEREMAIL, POSTTITLE, POSTTOPIC, POSTSUMMARY, POSTPOSTED, POSTTEXT);
 
         foreach ($conn->query($sql) as $row) {
-            $tags[$arrayIndex] = $row["POSTTAG"];
+            $tags[$arrayIndex] = $row[POSTTAG];
             $arrayIndex++;
             $post = array_map();
 
-            if ($row["POSTISANONYMOUS"] == 1) {
-                $row["USEREMAIL"] = "Anonymous";
+            if ($row[POSTISANONYMOUS] == 1) {
+                $row[USEREMAIL] = ANONYMOUS;
             }
 
             for ($i = 0; $i < count($fields); $i++) {
@@ -300,7 +319,7 @@ VALUES ($postID, '$userEmail', $commentText)";
      */
     function getCommentsForPost($conn, $postID) {
         $sql = "SELECT * FROM COMMENT WHERE POSTID = $postID";
-        $fields = array("COMMENTID", "USEREMAIL", "COMMENTPOSTED", "COMMENTVOTES", "COMMENTTEXT");
+        $fields = array(COMMENTID, USEREMAIL, COMMENTPOSTED, COMMENTVOTES, COMMENTTEXT);
         $comments = array();
         $index = 0;
 
@@ -339,10 +358,10 @@ VALUES ($postID, '$userEmail', $commentText)";
     }
 
     function getNumberOfComments($conn, $postID) {
-        $sql = "SELECT COUNT(*) AS 'count' FROM COMMENT WHERE POSTID = $postID";
+        $sql = "SELECT COUNT(*) AS COUNT FROM COMMENT WHERE POSTID = $postID";
         $number = 0;
         foreach ($conn->query($sql) as $row) {
-            $number = $row["count"];
+            $number = $row[COUNT];
         }
 
         return $number;

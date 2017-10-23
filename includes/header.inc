@@ -17,7 +17,19 @@
     
     <meta charset='utf-8' />
     
-    <link href='./css/mainStyles.css' type='text/css' rel='stylesheet' />
     <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js\"></script>
+    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">
+
+	<!-- Setting the width -->
+	<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+
+	<title>View Posts</title>
+
+	<!-- Bootstrap CSS -->
+	<link href=\"css/bootstrap.css\" rel=\"stylesheet\">
+
+	<!-- CSS -->
+	<link href=\"css/main.css\" rel=\"stylesheet\">
+	<script src=\"js/postjs.js\"></script>
     
     ";
