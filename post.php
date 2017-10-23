@@ -15,8 +15,7 @@
     include_once "processingDocuments/postFunctions.inc";
     include "includes/header.inc";
     echo "<title>Post</title>";
-    echo '	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    echo '<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 	<!-- Setting the width -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">

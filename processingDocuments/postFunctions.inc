@@ -137,7 +137,7 @@
             if ($row["POSTISANONYMOUS"] == 1) {
                 $row["USEREMAIL"] = "Anonymous";
             }
-            echo "<h2>" . $row["POSTID"] . " " . $row["POSTTITLE"] . "</h2>";
+            echo "<h2>" . $row["POSTTITLE"] . "</h2>";
             echo "<p>Posted by <span class='bold'>" . $row["USEREMAIL"] . "</span></p>";
             echo "<p>Topic: ";
             echo $row["POSTTOPIC"];
