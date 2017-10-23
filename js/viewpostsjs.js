@@ -4,4 +4,8 @@ $(document).ready(function () {
         $(this).next().slideToggle();
     });
 
+    // make a class...
+
+
+
 });

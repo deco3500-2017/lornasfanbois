@@ -10,3 +10,8 @@
     /**
         Going to take some get results and display them. Also allow users to refine search results based on - user, date posted, popularity, comments
      */
+
+    // display users who match the condition
+    // display titles that meet the condition
+    // topics
+    // text contains

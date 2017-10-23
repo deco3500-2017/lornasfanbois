@@ -9,10 +9,12 @@
     include_once "processingDocuments/postFunctions.inc";
     include "includes/header.inc";
     echo "<title>View Posts</title>";
+    echo "<script src='js/viewpostsjs.js'></script>";
     echo '</head>';
     echo '<body>';
     include_once "includes/mainNavigation.inc";
 
+    echo "<h1>Posts</h1>";
     printAllApprovedPosts($conn);
 
     echo '

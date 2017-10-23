@@ -104,7 +104,6 @@
             $conn->exec($sql);
         }
 
-
     }
 
 
@@ -165,14 +164,23 @@
             echo "<p>";
             echo $row[POSTTEXT];
             echo "</p>";
-
-            echo "This post has: " . getNumberOfComments($conn, $row[POSTID]);
-            echo "</div>";
             $numberOfComments = getNumberOfComments($conn, $row[POSTID]);
+            echo "This post has: " . $numberOfComments;
+            echo "</div>";
+
             if ($numberOfComments > 0) {
                 echo "<h3 class='commentsHeading'>Comments ($numberOfComments): </h3>";
                 echo "<div class='comments'>";
                 printCommentsForPost($conn, $row[POSTID]);
+                echo '<form action="processingDocuments/commentHandler.php" method="post">
+                        
+
+						<label for="Commenttext">Comment</label><br/>
+                        <textarea name="postBody"></textarea><br/>
+                    
+                        <br />
+                        <input type="submit" name="submit" />
+                </form>';
                 echo "</div>";
             }
 
@@ -343,28 +351,50 @@ VALUES ($postID, '$userEmail', $commentText)";
      * @param $postID the id of the post to print comments for
      */
     function printCommentsForPost($conn, $postID) {
-        echo "<p>returned from post $postID:</p>";
 
         $posts = getCommentsForPost($conn, $postID);
         foreach ($posts as $post) {
             echo "<div>";
             $index = 0;
-            foreach ($post as $field) {
-                echo "$index: $field";
-            }
+            // $fields = array(COMMENTID, USEREMAIL, COMMENTPOSTED, COMMENTVOTES, COMMENTTEXT);
+
+            echo "<span class='bold'>Posted by:</span> " . $post[1] . "<br />";
+            echo "<span class='bold'>Posted at:</span> " . $post[2] . "<br />";
+            echo "<span class='bold'>Up votes:</span> " . $post[3] . "<br />";
+            echo "" . $post[4] . "<br />";
+
+
             echo "<hr />";
             echo "</div>";
         }
     }
 
     function getNumberOfComments($conn, $postID) {
-        $sql = "SELECT COUNT(*) AS COUNT FROM COMMENT WHERE POSTID = $postID";
+        $sql = "SELECT COUNT(*) AS 'count' FROM COMMENT WHERE POSTID = $postID";
         $number = 0;
         foreach ($conn->query($sql) as $row) {
             $number = $row[COUNT];
         }
 
         return $number;
+    }
+
+    function getPost ($conn, $postID) {
+        $sql = "SELECT * FROM POST WHERE POSTID = $postID";
+        $results = array_map();
+        foreach ($conn->query($sql) as $row) {
+            if ($row[USERAPPROVED] == 0) {
+                $results;
+            }
+            $results[POSTID]  = $row[POSTID];
+            $results[USEREMAIL] = $row[USEREMAIL];
+            $results[POSTTITLE] = $row[POSTTITLE];
+            $results[POSTSUMMARY] = $row[POSTSUMMARY];
+            $results[POSTPOSTED] = $row[POSTPOSTED];
+            $results[POSTTEXT] = $row[POSTTEXT];
+        }
+
+        return $results;
     }
 
 

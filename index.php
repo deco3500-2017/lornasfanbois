@@ -13,7 +13,7 @@
 ';
     include_once "includes/mainNavigation.inc";
 
-    echo'
+    echo '
 
 
 	<!-- About TeachHub -->	
