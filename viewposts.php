@@ -22,6 +22,8 @@
 
 	<!-- CSS -->
 	<link href="css/main.css" rel="stylesheet">
+	
+	<script src="js/viewpostsjs.js"></script>
 
 </head>';
     echo '<body>
@@ -52,7 +54,6 @@
 		</div>
 	</div>
 	';
-    echo "<h2>Approved Posts:</h2>";
     printAllApprovedPosts($conn);
 	echo'
 	<!--Footer-->

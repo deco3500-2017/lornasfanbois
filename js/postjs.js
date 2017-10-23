@@ -10,19 +10,16 @@ $(document).ready(function () {
     console.log("Ready state has changed");
     console.log(document.readyState);
 
-
-/*    postFormContainerDiv.style.marginTop = (window.innerHeight / 2 - postFormContainerDiv.offsetHeight / 2) + "px";
-    postFormContainerDiv.style.marginLeft = (window.innerWidth / 2 - postFormContainerDiv.offsetWidth / 2) + "px";*/
+    // these ids have been removed, and shouldnt be necessary with bootstrap???
+    /*    postFormContainerDiv.style.marginTop = (window.innerHeight / 2 - postFormContainerDiv.offsetHeight / 2) + "px";
+        postFormContainerDiv.style.marginLeft = (window.innerWidth / 2 - postFormContainerDiv.offsetWidth / 2) + "px";*/
 
     var tagImage = document.getElementById("addTag");
-    console.log("Adding click listener...");
     tagImage.addEventListener("click", addTag);
-    console.log("The listener has been added..." );
-    console.log(tagImage);
+
 
 
     function addTag() {
-        console.log("The button has been pressed");
         var tag = prompt("Enter your tag");
 
         if (tag === null || tag === "" || tag === " ") {

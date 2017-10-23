@@ -54,5 +54,10 @@ nav li a:active {
     margin: 2px;
 }
 
+.comments {
+    display: none;
+}
+
+
 
 

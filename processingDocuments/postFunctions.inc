@@ -133,8 +133,6 @@
 
 
         foreach ($conn->query($sql) as $row) {
-            echo "ID: " . $row["POSTID"];
-
             echo "<div class='post'>";
             if ($row["POSTISANONYMOUS"] == 1) {
                 $row["USEREMAIL"] = "Anonymous";
@@ -149,13 +147,15 @@
             echo $row["POSTTEXT"];
             echo "</p>";
 
+            echo "This post has: " . getNumberOfComments($conn, $row["POSTID"]);
             echo "</div>";
-
-            if (getNumberOfComments($conn, $row["POSTID"]) > 0){
-                echo "<h3>Comments: </h3>";
+            $numberOfComments = getNumberOfComments($conn, $row["POSTID"]);
+            if ($numberOfComments > 0) {
+                echo "<h3 class='commentsHeading'>Comments ($numberOfComments): </h3>";
+                echo "<div class='comments'>";
                 printCommentsForPost($conn, $row["POSTID"]);
+                echo "</div>";
             }
-
 
 
         }
@@ -339,7 +339,7 @@ VALUES ($postID, '$userEmail', $commentText)";
     }
 
     function getNumberOfComments($conn, $postID) {
-        $sql = "SELECT COUNT(*) FROM COMMENT WHERE POSTID = $postID";
+        $sql = "SELECT COUNT(*) AS 'count' FROM COMMENT WHERE POSTID = $postID";
         $number = 0;
         foreach ($conn->query($sql) as $row) {
             $number = $row["count"];
