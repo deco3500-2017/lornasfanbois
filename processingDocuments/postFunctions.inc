@@ -168,19 +168,25 @@
             echo "</div>";
 
             if ($numberOfComments > 0) {
-                echo "<h3 class='commentsHeading'>Comments ($numberOfComments): </h3>";
+                echo "<h3 class='commentsHeading'>Comments <span class='numberOfComments'>($numberOfComments)</span>: </h3>";
                 echo "<div class='comments'>";
                 printCommentsForPost($conn, $row[POSTID]);
-                echo '
-                        <input class="commentID" type="hidden" name="commentID" value=' . $row[POSTID] .' />
-						<label for="Commenttext">Comment</label><br/>
-                        <textarea name="postBody" class="commentTextArea" colspan="20"></textarea><br/>
+                echo "</div>";
+            } else {
+                echo "<h3 class='commentsHeading'>Comment <span class='numberOfComments'></span>: </h3>";
+                echo "<div class='comments'></div>";
+
+
+            }
+            echo "<div class='postComment'>
+                        <input class=\"commentID\" type=\"hidden\" name=\"commentID\" value='" . $row[POSTID] . "' />
+						<label for=\"Commenttext\">Comment</label><br/>
+                        <textarea name=\"postBody\" class=\"commentTextArea\" colspan=\"20\"></textarea><br/>
                     
                         <br />
-                        <input class="commentSubmitButton" type="submit" name="submit" />
-                </form>';
-                echo "</div>";
-            }
+                        <input class=\"commentSubmitButton\" type=\"submit\" name=\"submit\" />
+
+</div>";
 
 
         }
@@ -377,14 +383,14 @@ VALUES ($postID, '$userEmail', 0, '$commentText')";
         return $number;
     }
 
-    function getPost ($conn, $postID) {
+    function getPost($conn, $postID) {
         $sql = "SELECT * FROM POST WHERE POSTID = $postID";
         $results = array_map();
         foreach ($conn->query($sql) as $row) {
             if ($row[USERAPPROVED] == 0) {
                 $results;
             }
-            $results[POSTID]  = $row[POSTID];
+            $results[POSTID] = $row[POSTID];
             $results[USEREMAIL] = $row[USEREMAIL];
             $results[POSTTITLE] = $row[POSTTITLE];
             $results[POSTSUMMARY] = $row[POSTSUMMARY];

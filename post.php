@@ -1,14 +1,14 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Digby
- * Date: 26/09/2017
- * Time: 12:27 PM
- */
+    /**
+     * Created by PhpStorm.
+     * User: Digby
+     * Date: 26/09/2017
+     * Time: 12:27 PM
+     */
 
-/**
- * The actual form that the person posting is going to see
- */
+    /**
+     * The actual form that the person posting is going to see
+     */
 
 
     include_once "processingDocuments/dbConnect.inc";
@@ -18,15 +18,14 @@
 <script src=\"js/postjs.js\"></script>";
 
 
-	
-echo '</head>';
+    echo '</head>';
 // body
- echo '<body>
+    echo '<body>
 
 	';
- include_once "includes/mainNavigation.inc";
+    include_once "includes/mainNavigation.inc";
 // post form
-echo '
+    echo '
 <div id="grey">
         <div class="container">
 			<div class="row">
@@ -57,7 +56,7 @@ echo '
     </div>
     ';
 
-echo'
+    echo '
 	<!--Footer-->
 
 	<div id="footer">

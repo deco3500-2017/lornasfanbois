@@ -23,18 +23,12 @@
 
     $post = getPost($conn, $_POST["POSTID"]);
 
-    // get and print the post
-    // get and print comments
-    // get and print likes
-    // this page is going to take something from post, and then is going to display the specifics of that post.
-
     require_once "processingDocuments/dbConnect.inc";
     include_once "processingDocuments/postFunctions.inc";
     include_once "includes/header.inc";
 
 
-
-    echo "<title>Page title</title>";
+    echo "<title> Replace this with the title of the post </title>";
 
     include_once "includes/mainNavigation.inc";
 

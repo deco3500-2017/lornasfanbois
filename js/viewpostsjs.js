@@ -9,16 +9,14 @@ $(document).ready(function () {
     // commentTextArea text area
 
     $(".commentSubmitButton").click(function () {
-        console.log("The button has been pressed.");
         var $parentContainer = $(this).parent();
         var $textArea = $(this).parent().find(".commentTextArea");
         var $commentText = $textArea.val();
+
         $textArea.val("");
         var $postID = $parentContainer.find(".commentID").val();
         var $userEmail = "bob@domain.com";
-        console.log("The values are: ");
-        console.log($postID + ", " + $userEmail + " " + $commentText);
-        console.log("Attempting to save...");
+        console.log("The fields: " + $postID + " " + $userEmail + " " + $commentText);
         $.ajax({
             type: "POST",
             url: "/processingDocuments/commentHandler.php",
@@ -26,11 +24,9 @@ $(document).ready(function () {
                 postID: $postID,
                 userEmail: $userEmail,
                 commentText: $commentText
-            },
-            success: function (e) {
-                console.log("The write has been successful by the looks...");
-                console.log(e);
             }
+/*            success: function () {
+            }*/
 
         });
 
