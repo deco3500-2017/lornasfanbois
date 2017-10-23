@@ -7,7 +7,6 @@
 
 $(document).ready(function () {
     var postFormContainerDiv = document.getElementById("postFormContainerDiv");
-    console.log("Ready state has changed");
     console.log(document.readyState);
 
     // these ids have been removed, and shouldnt be necessary with bootstrap???
