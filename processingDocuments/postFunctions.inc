@@ -151,6 +151,18 @@
             echo "</div>";
 		
 			printCommentsForPost($conn,$row["POSTID"]);
+			echo '
+			<form action="processingDocuments/commentHandler.php" method="post">
+                        
+						<input type="hidden" id="postid" name="postid" value="' . $row["POSTID"] . '"/>
+						<input type="hidden" id="userEmail" name="userEmail" value="bob@domain.com"/>
+						<label for="Commenttext">Comment</label><br/>
+                        <textarea name="Commenttext"></textarea><br/>
+						
+                        <br />
+                        <input type="submit" name="submit" />
+                </form>
+				';
         }
     }
 
@@ -319,13 +331,23 @@ VALUES ($postID, '$userEmail', $commentText)";
     function printCommentsForPost($conn, $postID) {
         echo "<p>returned from post $postID:</p>";
 
-        $posts = getCommentsForPost($conn, $postID);
-        foreach ($posts as $post) {
-            echo "<div>";
+        $comments = getCommentsForPost($conn, $postID);
+        foreach ($comments as $comment) {
+            echo "<div class='comment'>";
             $index = 0;
-            foreach ($post as $field) {
-                echo "$index: $field";
+
+			echo "<p>";
+			
+			foreach ($comment as $field){ 
+				if ($index == 1){
+				 echo "$field:";
+				}
+                elseif ($index == 4) {
+				 echo " $field";
+				}
+			   $index++;
             }
+			echo "</p>";
             echo "</div>";
         }
     }
