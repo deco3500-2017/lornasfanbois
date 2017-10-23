@@ -165,21 +165,19 @@
             echo $row[POSTTEXT];
             echo "</p>";
             $numberOfComments = getNumberOfComments($conn, $row[POSTID]);
-            echo "This post has: " . $numberOfComments;
             echo "</div>";
 
             if ($numberOfComments > 0) {
                 echo "<h3 class='commentsHeading'>Comments ($numberOfComments): </h3>";
                 echo "<div class='comments'>";
                 printCommentsForPost($conn, $row[POSTID]);
-                echo '<form action="processingDocuments/commentHandler.php" method="post">
-                        
-
+                echo '
+                        <input class="commentID" type="hidden" name="commentID" value=' . $row[POSTID] .' />
 						<label for="Commenttext">Comment</label><br/>
-                        <textarea name="postBody"></textarea><br/>
+                        <textarea name="postBody" class="commentTextArea" colspan="20"></textarea><br/>
                     
                         <br />
-                        <input type="submit" name="submit" />
+                        <input class="commentSubmitButton" type="submit" name="submit" />
                 </form>';
                 echo "</div>";
             }
@@ -308,7 +306,7 @@ POSTTAG = '$tag'";
 
     function addComment($conn, $postID, $userEmail, $commentText) {
         $sql = "INSERT INTO COMMENT (POSTID, USEREMAIL, COMMENTVOTES, COMMENTTEXT) 
-VALUES ($postID, '$userEmail', $commentText)";
+VALUES ($postID, '$userEmail', 0, '$commentText')";
 
         $conn->exec($sql);
     }

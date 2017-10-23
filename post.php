@@ -14,7 +14,9 @@
     include_once "processingDocuments/dbConnect.inc";
     include_once "processingDocuments/postFunctions.inc";
     include "includes/header.inc";
-    echo "<title>Post</title>";
+    echo "<title>Post</title>
+<script src=\"js/postjs.js\"></script>";
+
 
 	
 echo '</head>';

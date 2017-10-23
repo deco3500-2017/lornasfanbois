@@ -31,6 +31,6 @@
 	<!-- CSS -->
 	<link href=\"css/main.css\" rel=\"stylesheet\">
 	<link href='css/mainStyles.css' rel='stylesheet' type='text/css'>
-	<script src=\"js/postjs.js\"></script>
+	
     
     ";
