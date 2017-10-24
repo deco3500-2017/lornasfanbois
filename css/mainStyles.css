@@ -1,3 +1,7 @@
+* {
+    outline: none;
+}
+
 .requiredField {
     color: #ff0000;
 }
@@ -12,6 +16,8 @@
 
 .comments {
     display: none;
+    width: 80%;
+
 }
 
 .bold {
@@ -22,7 +28,27 @@
     cursor: pointer;
 }
 
+.logo {
+    float: left;
+}
 
+.upVoteContainer {
+    float: right;
+}
+
+.postComment textarea {
+    width: 80%;
+    height: 150px;
+    padding: 5px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.post, .commentsContainer {
+    width: 80%;
+    margin: auto;
+}
 
 
 

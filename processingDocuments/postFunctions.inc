@@ -164,8 +164,13 @@
             echo "<p>";
             echo $row[POSTTEXT];
             echo "</p>";
-            $numberOfComments = getNumberOfComments($conn, $row[POSTID]);
+            echo "<div class='upVoteContainer'>";
+
+            echo "Votes: " . getNumberOfUpVotesForPost($conn, $row[POSTID]);
             echo "</div>";
+            echo "</div>";
+
+            $numberOfComments = getNumberOfComments($conn, $row[POSTID]);
             echo "<div class='commentsContainer'>";
             if ($numberOfComments > 0) {
                 echo "<h3 class='commentsHeading'>Comments <span class='numberOfComments'>($numberOfComments)</span>: </h3>";
@@ -175,8 +180,6 @@
             } else {
                 echo "<h3 class='commentsHeading'>Comment <span class='numberOfComments'></span>: </h3>";
                 echo "<div class='comments'></div>";
-
-
             }
             echo "<div class='postComment'>
                         <input class=\"commentID\" type=\"hidden\" name=\"commentID\" value='" . $row[POSTID] . "' />
@@ -399,6 +402,15 @@ VALUES ($postID, '$userEmail', 0, '$commentText')";
         }
 
         return $results;
+    }
+
+    function getNumberOfUpVotesForPost($conn, $postID) {
+        $sql = "SELECT COUNT(*) AS 'count' FROM POSTLIKE WHERE POSTID = $postID";
+        $result = 0;
+        foreach ($conn->query($sql) as $row) {
+            $result = $row["count"];
+        }
+        return $result;
     }
 
 

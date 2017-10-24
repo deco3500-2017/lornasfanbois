@@ -8,7 +8,7 @@
 echo '
     <!-- Navbar -->
 <div class="navbar navbar-inverse navbar-static-top">
-    <img class="logo" src="images\logo.png" style="float: left;">
+    <a href="viewposts.php"><img class="logo" src="images\logo.png" ></a>
 	<div class="container">
 		<!-- This div changes the menu to a drop-down for mobile users -->
 		<div class="navbar-header">
