@@ -166,7 +166,7 @@
             echo "</p>";
             $numberOfComments = getNumberOfComments($conn, $row[POSTID]);
             echo "</div>";
-
+            echo "<div class='commentsContainer'>";
             if ($numberOfComments > 0) {
                 echo "<h3 class='commentsHeading'>Comments <span class='numberOfComments'>($numberOfComments)</span>: </h3>";
                 echo "<div class='comments'>";
@@ -186,7 +186,7 @@
                         <br />
                         <input class=\"commentSubmitButton\" type=\"submit\" name=\"submit\" />
 
-</div>";
+</div></div>";
 
 
         }

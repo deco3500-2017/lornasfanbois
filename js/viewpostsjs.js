@@ -12,6 +12,7 @@ $(document).ready(function () {
         var $parentContainer = $(this).parent();
         var $textArea = $(this).parent().find(".commentTextArea");
         var $commentText = $textArea.val();
+        var $thisButton = $(this);
 
         $textArea.val("");
         var $postID = $parentContainer.find(".commentID").val();
@@ -24,13 +25,35 @@ $(document).ready(function () {
                 postID: $postID,
                 userEmail: $userEmail,
                 commentText: $commentText
+            },
+            success: function () {
+
+
+                var $commentContainerDiv = $thisButton.parent().parent();
+
+                $commentContainerDiv.find(".numberOfComments").text("(" + getTheNumber($commentContainerDiv.find(".numberOfComments").text()) + ")");
+
+                var string = "<div><span class='bold'>Posted by:</span> " + $userEmail + "<br />";
+                string += "<span class='bold'>Posted at:</span>" + Math.floor(Date.now() / 1000) + "<br />";
+                string += "<span class='bold'>Up votes:</span> 0 <br />";
+                string += $commentText;
+                string += "</div><hr/>";
+
+                $commentContainerDiv.find(".comments").append($(string));
             }
-/*            success: function () {
-            }*/
 
         });
 
     });
+
+    /**
+     * Returns the number from the number of comments that a post has.
+     * */
+    function getTheNumber(string) {
+        var num = string.split("(")[1];
+        console.log("Returning: " + Number(num.split(")")[0]) + 1);
+        return (Number(num.split(")")[0])) + 1;
+    }
 
 
 });
