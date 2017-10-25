@@ -36,45 +36,17 @@ echo '
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<a href="lessonplan1.php">
-						<img src="images/shape.jpg">
-						<h4>Math Shapes</h4>
-						<p>Lesson about Shapes in Maths</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan2.php">
+						<h4>Fractured Fairytales</h4>
 						<img src="images/fairy-tales-for-kids.jpg" style="height: 425px; width: 330px">
-						<h4>English Fairytales</h4>
-						<p>Lesson with Fairytales</p>
-					</a>
+						<a href="/pdf/Fractured-Fairytale-Narratives-Unit-Plan.pdf" download><b>Download Resources for this lesson plan</b></a>
 				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan3.php">
-						<img src="images/science.jpg" style="height: 425px; width: 330px">
-						<h4>Water Science</h4>
-						<p>Lesson on water in our world</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan4.php">
-						<img src="images/Earth.jpg" style="height: 425px; width: 330px">
-						<h4>Geography and Earth</h4>
-						<p>Basics Of Geography</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan1.php">
-						<img src="images/shape.jpg">
-						<h4>Math Shapes</h4>
-						<p>Lesson about Shapes in Maths</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan1.php">
-						<img src="images/shape.jpg">
-						<h4>Math Shapes</h4>
-						<p>Lesson about Shapes in Maths</p>
+				<div class="col-lg-8">
+						<h4>Summary of Lesson Plan:</h4>
+						<p>The following unit allows students to explore traditional and fractured fairy tales in order to see stories from a different point of view. Students will use activity to explore fractured stories and to create their own mixed up fairy tales. Students will compare and contrast different stories while writing their own narratives. The focus text structure of the unit is Narratives and students will learn how to sequence their writing. Students will identify elements of fairy-tale stories, create exciting characters, sequence events, create and solve problems.</p>
+						<h4>Lesson Plan Sequence</h4>
+						<p><b>Orientation</b> 5 minutes</p>
+						<p>Construct simple literary and non-literary texts by planning and by using prior knowledge and experience to match an audience and purpose. Interpret how people, characters, places, events and things have been represented.</p>
+						<p>Interpret how people, characters, places, events and things have been represented. Construct simple literary and non-literary texts by planning and by using prior knowledge and experience to match an audience and purpose.</p>
 					</a>
 				</div>
 			</div>
