@@ -176,7 +176,7 @@
                 printCommentsForPost($conn, $row[POSTID]);
                 echo "</div>";
             } else {
-                echo "<h3 class='commentsHeading'>Comment <span class='numberOfComments'></span>: </h3>";
+                echo "<h3 class='commentsHeading'>Comments <span class='numberOfComments'>(0)</span>: </h3>";
                 echo "<div class='comments'></div>";
             }
             echo "<div class='postComment'>

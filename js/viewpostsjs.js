@@ -34,7 +34,7 @@ $(document).ready(function () {
                 $commentContainerDiv.find(".numberOfComments").text("(" + getTheNumber($commentContainerDiv.find(".numberOfComments").text()) + ")");
 
                 var string = "<div><span class='bold'>Posted by:</span> " + $userEmail + "<br />";
-                string += "<span class='bold'>Posted at:</span>" + Math.floor(Date.now() / 1000) + "<br />";
+                string += "<span class='bold'>Posted at:</span>" + new Date($.now()) + "<br />";
                 string += "<span class='bold'>Up votes:</span> 0 <br />";
                 string += $commentText;
                 string += "</div><hr/>";
