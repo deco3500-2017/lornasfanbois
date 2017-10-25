@@ -7,7 +7,7 @@
      */
 
     /**
-     * This file will handle writing of posts
+     * This file will handle the recording of comments
      */
 
 

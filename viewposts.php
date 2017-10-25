@@ -10,6 +10,7 @@
     include "includes/header.inc";
     echo "<title>View Posts</title>";
     echo "<script src='js/viewpostsjs.js'></script>";
+    echo "<script src='js/likejs.js'></script>";
     echo '</head>';
     echo '<body>';
     include_once "includes/mainNavigation.inc";

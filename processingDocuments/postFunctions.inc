@@ -155,6 +155,10 @@
             if ($row[POSTISANONYMOUS] == 1) {
                 $row[USEREMAIL] = ANONYMOUS;
             }
+            echo "<div class='upVoteContainer'>";
+
+            echo "Votes: <span class='voteCount'>" . getNumberOfUpVotesForPost($conn, $row[POSTID]) . "</span> <span class='likeThisPost'>(+1)<input type='hidden' class='likeInput' name='postID' value='$row[POSTID]'/></span>";
+            echo "</div>";
             echo "<h2>" . $row[POSTTITLE] . "</h2>";
             echo "<p>Posted by <span class='bold'>" . $row[USEREMAIL] . "</span></p>";
             echo "<p>Topic: ";
@@ -164,10 +168,7 @@
             echo "<p>";
             echo $row[POSTTEXT];
             echo "</p>";
-            echo "<div class='upVoteContainer'>";
 
-            echo "Votes: " . getNumberOfUpVotesForPost($conn, $row[POSTID]);
-            echo "</div>";
             echo "</div>";
 
             $numberOfComments = getNumberOfComments($conn, $row[POSTID]);
