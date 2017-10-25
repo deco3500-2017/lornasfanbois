@@ -24,7 +24,7 @@
     font-weight: bold;
 }
 
-.comments {
+.commentsHeading {
     cursor: pointer;
 }
 
@@ -50,5 +50,18 @@
     margin: auto;
 }
 
+.likeThisPost {
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+
+}
+
+.upVoteContainer {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
 
 

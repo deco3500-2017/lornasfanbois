@@ -11,17 +11,43 @@
 
     include_once "processingDocuments/dbConnect.inc";
 
-    $sql = "SELECT * FROM POST WHERE USERCONFIRMED IS NULL";
+    // take each post that isn't approved from the database and print it with a box that allows confirmation of the
 
-    echo "<form action='#' method='post'>";
+    const USERAPPROVED = "USERAPPROVED";
+    const POSTTITLE = "POSTTITLE";
+    const POSTTOPIC = "POSTTOPIC";
+    const POSTSUMMARY = "POSTSUMMARY";
+    const POSTPOSTED = "POSTPOSTED";
+    const POSTTEXT = "POSTTEXT";
+    const POSTISANONYMOUS = "POSTISANONYMOUS";
+    const POSTID = "POSTID";
 
+    $sql = "SELECT * FROM POST WHERE USERAPPROVED IS NULL";
+
+    echo "<form action='approve.php' method='post'>";
+    $postNumber = 0;
     foreach ($conn->query($sql) as $row) {
-        print_r($row);
-        echo "<input type='checkbox' name='checked[]' value='" . $row["POSTID"] ."' />";
-    }
+        $postNumber++;
+        if ($row[ANONYMOUS] == 1) {
+            $row[USEREMAIL] = "Anonymous";
+        }
+        echo "<div>";
+        echo "<p>Post number: $postNumber</p>";
+        echo "<p>Posted by: " + $row[USEREMAIL] . "</p>";
+        echo "<p>Title: " + $row[POSTTITLE] . "</p>";
+        echo "<p>Summary:</p>";
+        echo $row[POSTSUMMARY];
+        echo "<p>Post:</p>";
+        echo "<p>$row[POSTTEXT]</p>";
 
+
+
+        echo "<input type='checkbox' name='checked[]' value='$row[POSTID]'  />";
+        echo "</div>";
+    }
+    echo "<input type='submit' value='Confirm'>";
     echo "</form>";
 
 
-    echo "<input type='submit' value='Confirm'>";
+
 

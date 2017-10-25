@@ -98,11 +98,8 @@
      * @param $adminEmail the email address of the admin approving the post
      */
     function approvePost($conn, $postID, $adminEmail) {
-
-        if (checkAdmin($adminEmail)) {
-            $sql = "UPDATE POST SET USERAPPROVED = 1  WHERE POSTID = " . $postID;
-            $conn->exec($sql);
-        }
+        $sql = "UPDATE POST SET USERAPPROVED = '$adminEmail'  WHERE POSTID = " . $postID;
+        $conn->exec($sql);
 
     }
 
