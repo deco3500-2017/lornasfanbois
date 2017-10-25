@@ -36,45 +36,17 @@ echo '
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<a href="lessonplan1.php">
-						<img src="images/shape.jpg">
 						<h4>Math Shapes</h4>
-						<p>Lesson about Shapes in Maths</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan2.php">
-						<img src="images/fairy-tales-for-kids.jpg" style="height: 425px; width: 330px">
-						<h4>English Fairytales</h4>
-						<p>Lesson with Fairytales</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan3.php">
-						<img src="images/science.jpg" style="height: 425px; width: 330px">
-						<h4>Water Science</h4>
-						<p>Lesson on water in our world</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan4.php">
-						<img src="images/Earth.jpg" style="height: 425px; width: 330px">
-						<h4>Geography and Earth</h4>
-						<p>Basics Of Geography</p>
-					</a>
-				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan1.php">
 						<img src="images/shape.jpg">
-						<h4>Math Shapes</h4>
-						<p>Lesson about Shapes in Maths</p>
-					</a>
+						<a href="/pdf/2D-Shape-Cards.pdf" download><b>Download Resources for this lesson plan</b></a>
 				</div>
-				<div class="col-lg-4">
-					<a href="lessonplan1.php">
-						<img src="images/shape.jpg">
-						<h4>Math Shapes</h4>
-						<p>Lesson about Shapes in Maths</p>
+				<div class="col-lg-8">
+						<h4>Summary of Lesson Plan:</h4>
+						<p>In this lesson plan, students learn what vertices, edges and faces are. They Create 2D shapes from play dough and cut these in half to show line of symmetry and identify nets of 3D shapes and create the 3D shape from the net by cutting, folding and pasting/taping. A hands-on lesson that’s full of fun.</p>
+						<h4>Lesson Plan Sequence</h4>
+						<p><b>Orientation</b> 5 minutes</p>
+						<p>Explain 2D shapes are flat (they only have width and length) and 3D shapes have height (length, width and height) E.g. prisms and pyramids. Prisms have two bases and are the same all the way across. Pyramids have one base and a point where all edges meet.</p>
+						<p>Explain 3D shapes also have vertices, edges and faces. Who knows what vertices, edges and faces are? Using the play dough shapes explain: A vertex is a corner, it is where two or more straight lines meet. An edge joins one vertex (corner) with another and a face is an individual surface.</p>
 					</a>
 				</div>
 			</div>
