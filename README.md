@@ -218,7 +218,8 @@ This would include being able to: <br />
 * Search function (to sift through)
 * Sort function (Alphabetical, Subject, Year level, Rating, etc.) 
 
-
+## Conference Poster
+https://user-images.githubusercontent.com/30458672/32039720-08b8dd14-ba72-11e7-8fc5-b5c0b09c826a.png
 
 
 
