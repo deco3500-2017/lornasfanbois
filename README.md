@@ -20,6 +20,22 @@ Many new teachers who leave education identify a lack of support and mentorship 
 
 TeachHub aims to create a community in which teachers can communicate, share and discover teaching methods and resources, new technologies and how to use them. The application will mainly focus on asynchronous distributed interaction where teachers will create, post, reply in forums. The web application will allow teachers to create and share lesson plans and use ready-made plans across a range of subjects. Lesson plans will have a rating system included which will allow teachers to see how effective the plan is and whether or not it will suit their circumstances. Teachers will also be able to get advice on teaching methods and how to deal with troubled students through a forum provided by the website.
 
+
+## Process
+The project began with groups forming around a concept within a domain. The original concept our group formed around was aimed at mitigating factors that contribute to teacher attrition in teachers who had been teaching for five years or less. This is an issue that is beyond the scope of this project to address directly, so we aimed to address symptoms of this problem that have been identified through research and interaction with teachers. Our solution spans both the Education and Active Community domains, with an emphasis on Active Community, with the original application intended to be a space where teachers could go to share and collaborate on resources. This has been the basis from which our idea has developed.
+
+<br/>
+ 
+We began the project by undertaking discussions with teachers, performing preliminary literary research, and then examining our findings to generate user requirements that would guide the development of early prototypes. Each group member created a paper prototype for the purpose of user testing, and performed testing. Each of the prototypes was tested with either members of the target audience (teachers), or surrogate users where members of the target audience were inaccessible.
+
+<br/>
+ 
+The feedback received from these sessions assisted us develop a concrete design direction for our concept, and as a result we were able to generate the Minimum Viable Produce (MVP) and begin development on an electronic prototype. From the feedback we received we created a minimum viable product and then started the process of creating our web application through PHP, html, CSS and JavaScript.  Once we had a basic layout, we tested it again with our target audience. From this we figured that the Lesson plans part of the web application should not be the focus of it. Instead we shifted to the forum feature of the application, and began exploring ways this could be used to facilitate teacher collaboration and sharing. 
+
+## Conference Poster
+https://user-images.githubusercontent.com/30458672/32039720-08b8dd14-ba72-11e7-8fc5-b5c0b09c826a.png
+
+
 ## Project Team
  | Member | Student Number | Course Code | Course | Roles |
 --- | --- | ---| --- | --- |
@@ -218,8 +234,6 @@ This would include being able to: <br />
 * Search function (to sift through)
 * Sort function (Alphabetical, Subject, Year level, Rating, etc.) 
 
-## Conference Poster
-https://user-images.githubusercontent.com/30458672/32039720-08b8dd14-ba72-11e7-8fc5-b5c0b09c826a.png
 
 
 
