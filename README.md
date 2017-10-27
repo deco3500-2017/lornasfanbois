@@ -235,6 +235,12 @@ This would include being able to: <br />
 * Search function (to sift through)
 * Sort function (Alphabetical, Subject, Year level, Rating, etc.) 
 
+## Individual Contributions 
+
+Individual contributions can be found on the wiki:
+- [Digby](https://github.com/deco3500-2017/lornasfanbois/wiki/Digby-Work)
+- [Ihsaan](https://github.com/deco3500-2017/lornasfanbois/wiki/Ihsaan-Work)
+- [Judah](https://github.com/deco3500-2017/lornasfanbois/wiki/Judah's-Work)
 
 
 
