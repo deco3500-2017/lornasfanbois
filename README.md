@@ -1,8 +1,9 @@
 # TeachHub by lornasFanBois
 
-**Promotional Material (Conference Poster):** https://user-images.githubusercontent.com/30458672/32039720-08b8dd14-ba72-11e7-8fc5-b5c0b09c826a.png
+**Promotional Material (Conference Poster):** 
+https://user-images.githubusercontent.com/30458672/32039720-08b8dd14-ba72-11e7-8fc5-b5c0b09c826a.png
 
-Our zone: https://s4435143-lornasfanbois.uqcloud.net/
+Our zone: https://lornasfanbois.uqcloud.net/
 
 **Target Audience:** Young teachers who have been in education for fewer than five years.
 
@@ -34,8 +35,6 @@ We began the project by undertaking discussions with teachers, performing prelim
  
 The feedback received from these sessions assisted us develop a concrete design direction for our concept, and as a result we were able to generate the Minimum Viable Produce (MVP) and begin development on an electronic prototype. From the feedback we received we created a minimum viable product and then started the process of creating our web application through PHP, html, CSS and JavaScript.  Once we had a basic layout, we tested it again with our target audience. From this we figured that the Lesson plans part of the web application should not be the focus of it. Instead we shifted to the forum feature of the application, and began exploring ways this could be used to facilitate teacher collaboration and sharing. 
 
-## Conference Poster
-https://user-images.githubusercontent.com/30458672/32039720-08b8dd14-ba72-11e7-8fc5-b5c0b09c826a.png
 
 
 ## Project Team
