@@ -1,5 +1,7 @@
 # TeachHub by lornasFanBois
 
+**Promotional Material (Conference Poster):** https://user-images.githubusercontent.com/30458672/32039720-08b8dd14-ba72-11e7-8fc5-b5c0b09c826a.png
+
 Our zone: https://s4435143-lornasfanbois.uqcloud.net/
 
 **Target Audience:** Young teachers who have been in education for fewer than five years.
